@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Jumble</title>
+</head>
+<body>
+	<h2>＼(ﾟｰﾟ＼)|WORD JUMBLER|(/ﾟｰﾟ)/</h2>
+	<form method="post">
+		{% csrf_token %}
+		<label>Enter a word: <input type="text" name="word"></label>
+		<button type="submit">Jumble</button>
+	</form>
+	
+    {% if original %}
+        <h3>Result:</h3>
+        <p><strong>Original Word is:</strong> {{ original }}</p>
+        <p><strong>Jumbled Word is:</strong> {{ jumbled }}</p>
+    {% endif %}
+</body>
+</html>
